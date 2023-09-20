@@ -1,5 +1,5 @@
 var hitrn = 0
-var score = 0;
+var score = 0
 function makeBubb(){
   clut = ""
   for(var i = 1;i<=168;i++){
@@ -7,6 +7,10 @@ function makeBubb(){
     clut += `<div class = "bubble">${rn}</div>`
     }
   document.querySelector("#pbtm").innerHTML = clut
+}
+function scoorex1(){
+  score=0;
+  document.querySelector("#scoreval").textContent = score
 }
   
 function scoorex(){
@@ -20,12 +24,12 @@ function newhit(){
 }
 var timer = 30;
 function timerF(){
-  var timerint = setInterval(function(){
+  
+  setInterval(function(){
     if(timer>0){
       timer= timer-1
     document.querySelector("#timeval").textContent = timer
     }else{
-      clearInterval(timerint)
       document.querySelector("#pbtm").innerHTML = `<h1 style = "color:#2e2e52"> Game Over!! <br>Your score is ${score}</br> </h1>`
     }
     var i = 0;
@@ -48,6 +52,13 @@ document.querySelector("#pbtm").addEventListener("click",function(dets){
     makeBubb()
     newhit()
   }
+})
+
+document.querySelector("button").addEventListener("click",function(){
+  timer=30
+  scoorex1()
+  makeBubb()
+  newhit()
 })
 timerF()
 makeBubb()

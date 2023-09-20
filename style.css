@@ -70,4 +70,145 @@
   }
   .bubble:hover{
     background-color: #1d1d34;
+  }* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+  }
+  
+  #main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #5d5d98;
+  }
+  
+  #panel {
+    overflow: hidden;
+    border-radius: 10px;
+    width: 80%;
+    height: 90%;
+    background-color: white;
+  }
+  
+  #ptop {
+    padding: 0px 20%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    background-color: #2e2e52;
+  }
+  
+  .box {
+    color: #2e2e52;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px 20px;
+    font-size: 22px;
+  }
+  
+  #pbtm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 100%;
+    height: calc(100% - 100px);
+  }
+  
+  .bubble {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2e2e52;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    color: white;
+  }
+  
+  .elem {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: white;
+  }
+  
+  .bubble:hover {
+    background-color: #1d1d34;
+  }
+  
+  .restart button{
+    border: none;
+    border-radius: 10px;
+    left: 78%;
+    color: #1d1d34;;
+    font-weight: 1000;
+    font-size: 15px;
+    position: absolute;
+    top: 13%;
+    transform: translate(0, -50%);
+    padding: 10px 20px;
+    height: 45px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .restart button{
+      left: 74%;
+      font-size: 12px;
+      position: absolute;
+      top: 15.5%;
+      transform: translate(0, -50%);
+      padding: 10px;
+      height: 36px;
+  }
+    .box {
+      width: 10%;
+      padding: 4px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .elem h3 {
+      font-size: 15px;
+  
+    }
+  #pbtm button{
+    display: inline;
+  }
+  }
+  @media screen and (max-width: 480px){
+    .restart button{
+      left: 70%;
+      font-size: 10px;
+      position: absolute;
+      top: 17%;
+      transform: translate(0, -50%);
+      padding: 2px;
+      height: 36px;
+  }
+    
+    .elem {
+      display: inline;
+      
+    }
+    .ptop1{
+      display: flex;
+      align-items: center;
+    }
   }
