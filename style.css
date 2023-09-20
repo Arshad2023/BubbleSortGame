@@ -152,30 +152,22 @@
     background-color: #1d1d34;
   }
   
-  .restart button{
+  .elem button{
     border: none;
     border-radius: 10px;
-    left: 78%;
-    color: #1d1d34;;
+    color: #1d1d34;
     font-weight: 1000;
     font-size: 15px;
-    position: absolute;
-    top: 13%;
-    transform: translate(0, -50%);
-    padding: 10px 20px;
     height: 45px;
+    padding: 2px 10px;
+    margin-left: 40px;
+    margin-top: 0px;
   }
   
   @media screen and (max-width: 768px) {
-    .restart button{
-      left: 74%;
-      font-size: 12px;
-      position: absolute;
-      top: 13%;
-      transform: translate(0, -50%);
-      padding: 10px;
-      height: 36px;
-  }
+    .elem button{
+      height: 35px;
+    }
     .box {
       width: 10%;
       padding: 4px 15px;
@@ -193,15 +185,11 @@
   }
   }
   @media screen and (max-width: 480px){
-    .restart button{
-      left: 70%;
-      font-size: 10px;
-      position: absolute;
-      top: 14%;
-      transform: translate(0, -50%);
-      padding: 2px;
-      height: 36px;
-  }
+    .elem button{
+      height: 35px;
+      margin-top: 15px;
+      margin-left: 10px;
+    }
     
     .elem {
       display: inline;
