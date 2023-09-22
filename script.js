@@ -22,6 +22,7 @@ function newhit(){
   hitrn = Math.floor(Math.random()*10)
   document.querySelector("#hitval").textContent = hitrn
 }
+var light;
 var fn;
 function timerF(){
   var timer=31;
@@ -33,17 +34,21 @@ function timerF(){
       document.querySelector("#pbtm").innerHTML = `<h1 style = "color:#2e2e52"> Game Over!! <br>Your score is ${score}</br> </h1>`
       document.querySelector("#pbtm").style.pointerEvents="none"
     }
-    var i = 0;
-    function dis(){
+    
+  },1000)
+  var i = 0;
+  var elem = document.querySelector("#timeval")
+    light = setInterval(function(){
       if(timer<5 && timer>0){
-        var elem = document.querySelector("#timeval")
       var bgcolor = ["Red","White"]
       elem.style.backgroundColor=bgcolor[i]
       i=(i+1)%bgcolor.length
     }
+    },100)
+    if(elem.style.backgroundColor=="red"){
+      elem.style.backgroundColor="white"
     }
-    setInterval(dis,100)
-  },1000)
+
 }
 
 document.querySelector("#pbtm").addEventListener("click",function(dets){
@@ -61,6 +66,7 @@ document.querySelector("#pbtm").addEventListener("click",function(dets){
 
 document.querySelector("button").addEventListener("click",function(){
   clearInterval(fn)
+  clearInterval(light)
   timerF()
   scoorex1()
   makeBubb()
@@ -78,7 +84,7 @@ if(phone.matches){
   document.querySelector("#pbtm").innerHTML = clut
 }
 }
-const pc = window.matchMedia( '( min-height: 800px )' )
+const pc = window.matchMedia( '( min-height: 650px )' )
 if(pc.matches){
     function makeBubb(){
   clut = ""
