@@ -22,15 +22,16 @@ function newhit(){
   hitrn = Math.floor(Math.random()*10)
   document.querySelector("#hitval").textContent = hitrn
 }
-var timer = 30;
+var fn;
 function timerF(){
-  
-  setInterval(function(){
+  var timer=31;
+  fn=setInterval(function(){
     if(timer>0){
       timer= timer-1
     document.querySelector("#timeval").textContent = timer
     }else{
       document.querySelector("#pbtm").innerHTML = `<h1 style = "color:#2e2e52"> Game Over!! <br>Your score is ${score}</br> </h1>`
+      document.querySelector("#pbtm").style.pointerEvents="none"
     }
     var i = 0;
     function dis(){
@@ -51,15 +52,37 @@ document.querySelector("#pbtm").addEventListener("click",function(dets){
     scoorex()
     makeBubb()
     newhit()
+  }else{
+    document.querySelector("#pbtm").innerHTML = `<h1 style = "color:#2e2e52"> Wrong Hit!! <br>Your score is ${score}</br> </h1>`
+    document.querySelector("#pbtm").style.pointerEvents = "none"
+    clearInterval(fn)
   }
 })
 
 document.querySelector("button").addEventListener("click",function(){
-  timer=30
+  clearInterval(fn)
+  timerF()
   scoorex1()
   makeBubb()
   newhit()
+  document.querySelector("#pbtm").style.pointerEvents = "auto"
 })
+const mediaQueryCondition = window.matchMedia( '( max-width: 480px )' )
+if(mediaQueryCondition.matches){
+    function makeBubb(){
+  clut = ""
+  for(var i = 1;i<=55;i++){
+    var rn = Math.floor(Math.random()*10)
+    clut += `<div class = "bubble">${rn}</div>`
+    }
+  document.querySelector("#pbtm").innerHTML = clut
+}
+}
+
+
+
+
+
 timerF()
 makeBubb()
 newhit()
