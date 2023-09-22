@@ -153,6 +153,7 @@
   }
   
   .elem button{
+    cursor: pointer;
     border: none;
     border-radius: 10px;
     color: #1d1d34;

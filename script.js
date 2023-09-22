@@ -67,8 +67,19 @@ document.querySelector("button").addEventListener("click",function(){
   newhit()
   document.querySelector("#pbtm").style.pointerEvents = "auto"
 })
-const mediaQueryCondition = window.matchMedia( '( max-width: 480px )' )
-if(mediaQueryCondition.matches){
+const phone = window.matchMedia( '( max-height: 580px )' )
+if(phone.matches){
+    function makeBubb(){
+  clut = ""
+  for(var i = 1;i<=35;i++){
+    var rn = Math.floor(Math.random()*10)
+    clut += `<div class = "bubble">${rn}</div>`
+    }
+  document.querySelector("#pbtm").innerHTML = clut
+}
+}
+const pc = window.matchMedia( '( min-height: 800px )' )
+if(pc.matches){
     function makeBubb(){
   clut = ""
   for(var i = 1;i<=55;i++){
